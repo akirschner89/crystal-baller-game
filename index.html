@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crystalize</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script> -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-h21C2fcDk/eFsW9sC9h0dhokq5pDinLNklTKoxIZRUn3+hvmgQSffLLQ4G4l2eEr" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <h1>The Crystal Baller</h1>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <h1>The Crystal Baller Game</h1>
+  <p>You shall be given a random number to begin the game...</p>
+  <p>Click a crystal to get some points...to win, match your points to the target number</p>
+  <p>If you shall go over, you shall lose a life...Each crytsal's number is a mystery until you click</p>
+  <p>The crystal baller will completely reset everytime you win, or LOSE</p>
+</div>
+
+<div class="container">
+	<div class="row">
+			  	<div class="col-md-6" id="wrapper1">
+			  			<div class="mainText">The Magic Number is: <span class="mainText" id="targetNumber"></span></div>
+			  			<div>Wins: <span id=winsCounter>0</span></div>
+			  			<div>Losses: <span id=lossesCounter>0</span></div>
+			  	</div>
+	
+			  	<div class="col-md-6" id="wrapper2">
+			  			<div class="mainText current">Your Total Score is:</div>
+			  			<div id="totalScore"></div>
+			  	</div>
+	</div>
+	<div class="row">
+	  <div class="col-md-3"><img src="assets/images/crystal1.jpeg" alt="crystal1" id="crystal1"></div>
+	  <div class="col-md-3"><img src="assets/images/crystal2.jpeg" alt="crystal2" id="crystal2"></div>
+	  <div class="col-md-3"><img src="assets/images/crystal3.jpeg" alt="crystal3" id="crystal3"></div>
+	  <div class="col-md-3"><img src="assets/images/crystal4.jpeg" alt="crystal4" id="crystal4"></div>
+	</div>
+
+</div>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</body>
+</html>

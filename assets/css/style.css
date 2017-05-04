@@ -1,0 +1,68 @@
+/*ALL*/
+
+* {
+	text-align: center;
+	box-sizing: border-box;
+}
+
+/*within navbar styling*/
+.navbar-header {
+	height: 10%;
+
+}
+
+a h1 {
+	margin: -10px 0 100px 40px;
+	font-weight: 700;
+	overflow: auto;
+    padding-left: 340px;
+
+}
+
+body {
+	background: url(../images/magic.jpg);
+}
+
+.jumbotron {
+	width: 70%;
+    margin-left: 15%;
+}
+
+.row {
+	margin-bottom:10px;
+}
+
+#wrapper1 {
+	background: #3bffb1;
+	text-align: left;
+	font-weight: 600;
+	color: white;
+	height: 100px;
+
+}
+
+#wrapper2 {
+	background: #ffaa41;
+	text-align: left;
+	font-weight: 600;
+	color: white;
+	height: 100px;
+}
+
+.mainText {
+	font-size: 1.5em;
+}
+
+.current {
+    padding-top: 10px;
+}
+
+#totalScore {
+	font-size: 1.5em;
+}
+
+
+img {
+	height: 250px;
+	width: 250px;
+}
