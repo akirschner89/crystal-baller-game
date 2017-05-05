@@ -6,7 +6,17 @@ var wins = 0;
 var losses = 0;
 var score = 0;
 
+if (score > targetNumber) {
+	alert("You Lose!");
+	losses++;
+	$("#lossesCounter").html(losses);
+}
 
+else if (score === targetNumber && targetNumber !== 0) {
+	alert("You Win");
+	wins++;
+	$("#winsCounter").html(wins);
+};
 // to randomly select a target number each round
 
 
@@ -21,7 +31,7 @@ var crystalValue = [1,2,3,4,5,6,7,8,9,10,11,12];
 
 
 for (var i = 0; i < 4; i++) {
-	crystalValue[i] = Math.floor(Math.random() * crystalValue.length);
+	crystalValue[i] = Math.round(Math.random() * crystalValue.length);
 	console.log(crystalValue[i]);
 };
 
@@ -83,18 +93,20 @@ for (var i = 0; i < 4; i++) {
 
 
 
-if (score > targetNumber && targetNumber !== 0) {
-	alert("You Lose!");
-	losses++;
-	$("lossesCounter").html(losses);
-};
+// if (score > targetNumber) {
+// 	alert("You Lose!");
+// 	losses++;
+// 	$("lossesCounter").text(losses);
+// }
 
-if (score === targetNumber && targetNumber !== 0) {
-	alert("You Win");
-	wins++;
-	$("winsCounter").html(wins);
-};
+// else if (score == targetNumber) {
+// 	alert("You Win");
+// 	wins++;
+// 	$("winsCounter").text(wins);
+// };
 
+
+// && targetNumber !== 0
 
 // if this happens outside of document.ready, you win at first b/c score & target are both 0 - scraped document.ready
 // it doesn't work inside of the document.ready because it can't bring those values outside of this function - scraped document.ready
