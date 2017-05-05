@@ -12,11 +12,9 @@
 }
 
 a h1 {
-	margin: -10px 0 100px 40px;
+	margin: -10px 0 100px 100px;
 	font-weight: 700;
 	overflow: auto;
-    padding-left: 340px;
-
 }
 
 body {
