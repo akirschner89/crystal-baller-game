@@ -6,22 +6,15 @@ var wins = 0;
 var losses = 0;
 var score = 0;
 
-if (score > targetNumber) {
-	alert("You Lose!");
-	losses++;
-	$("#lossesCounter").html(losses);
-}
-
-else if (score === targetNumber && targetNumber !== 0) {
-	alert("You Win");
-	wins++;
-	$("#winsCounter").html(wins);
-};
+var audio = new Audio('audio_file.mp3');
+audio.play();
 // to randomly select a target number each round
 
+// if (wins++ || losses++) {
+// 	reset();
+// };
 
-	var randomNumber = 18 + Math.floor(Math.random() * 102);
-	targetNumber+=randomNumber;
+	targetNumber = 18 + Math.floor(Math.random() * 102);
  	$("#targetNumber").text(targetNumber);
  	console.log(targetNumber);
 
@@ -29,103 +22,85 @@ else if (score === targetNumber && targetNumber !== 0) {
 var crystalValue = [1,2,3,4,5,6,7,8,9,10,11,12];
 
 
+setGame();
 
-for (var i = 0; i < 4; i++) {
-	crystalValue[i] = Math.round(Math.random() * crystalValue.length);
-	console.log(crystalValue[i]);
+
+function setGame(){	for (var i = 0; i < 4; i++) {
+		crystalValue[i] = 1 + Math.round(Math.random() * 11);
+		console.log(crystalValue[i]);
+	}};
+
+
+	 	$("#crystal1").on("click", function (){
+	 			score+= crystalValue[0];
+	 			// alert("Magic " + score + " times!");
+	 			// console.log(score)
+	 			$("#totalScore").text(score);
+	 			gameOver();
+
+	 		});
+
+	 	$("#crystal2").on("click", function (){
+	 			score += crystalValue[1];
+	 			// alert("Magic " + score + " times!");
+	 			// console.log(score)
+	 			$("#totalScore").text(score);
+	 			gameOver();
+
+	 		});
+
+	 	$("#crystal3").on("click", function (){
+	 			score += crystalValue[2];
+	 			// alert("Magic " + score + " times!");
+	 			// console.log(score)
+	 			$("#totalScore").text(score);
+	 			gameOver();
+
+	 		});
+
+	 	$("#crystal4").on("click", function (){
+	 			score += crystalValue[3];
+	 			// alert("Magic " + score + " times!");
+	 			// console.log(score)
+	 			$("#totalScore").text(score);
+	 			gameOver();
+
+	 		}
+	 	);
+
+		function gameOver() {if (score > targetNumber) {
+			console.log("You Lose!");
+			losses++;
+			$("#lossesCounter").html(losses);
+			reset();
+			score = 0;
+			$("#totalScore").text(score);
+		}
+
+		else if (score === targetNumber) {
+			console.log("You Win");
+			wins++;
+			$("#winsCounter").html(wins);
+			reset();
+			score = 0;
+			$("#totalScore").text(score);
+		}
+	};
+
+
+
+// placeholder space for a reset type of function if someone wins or loses
+
+function reset() {
+	targetNumber = 18 + Math.floor(Math.random() * 102);
+ 	$("#targetNumber").text(targetNumber);
+ 	setGame();
+
+
 };
 
 
 
-
-
-
- 	$("#crystal1").on("click", function (){
- 			score += crystalValue[0];
- 			// alert("Magic " + score + " times!");
- 			console.log(score)
- 			$("#totalScore").text(score);
-
- 		});
-
- 	$("#crystal2").on("click", function (){
- 			score += crystalValue[1];
- 			// alert("Magic " + score + " times!");
- 			console.log(score)
- 			$("#totalScore").text(score);
-
- 		});
-
- 	$("#crystal3").on("click", function (){
- 			score += crystalValue[2];
- 			// alert("Magic " + score + " times!");
- 			console.log(score)
- 			$("#totalScore").text(score);
-
- 		});
-
- 	$("#crystal4").on("click", function (){
- 			score += crystalValue[3];
- 			// alert("Magic " + score + " times!");
- 			console.log(score)
- 			$("#totalScore").text(score);
-
- 		});
-
-// placeholder space for a reset type of function if someone wins or loses
-
-
-// use a switch case or if else statement? NEITHER WORKS WHYYYYY
-
-// switch (score += crystalValue[i]) {
-// 	case "score > targetNumber": 
-// 		alert("You Lose!");
-// 		losses++;
-// 		$("lossesCounter").text(losses);
-// 	break;
-
-// 	case "score = targetNumber":
-// 		alert("You Win");
-// 		wins++;
-// 		$("winsCounter").text(wins);
-// }
-
-
-
-
-// if (score > targetNumber) {
-// 	alert("You Lose!");
-// 	losses++;
-// 	$("lossesCounter").text(losses);
-// }
-
-// else if (score == targetNumber) {
-// 	alert("You Win");
-// 	wins++;
-// 	$("winsCounter").text(wins);
-// };
-
-
-// && targetNumber !== 0
-
-// if this happens outside of document.ready, you win at first b/c score & target are both 0 - scraped document.ready
-// it doesn't work inside of the document.ready because it can't bring those values outside of this function - scraped document.ready
-
-
-// if (score === targetNumber && score > 0) {
-// 	alert("You Win");
-// 	wins++;
-// 	$("winsCounter").html(wins);
-// }
-
-// else if (score > targetNumber && score > 0) {
-// 	alert("You Lose!");
-// 	losses++;
-// 	$("lossesCounter").html(losses);
-// };
-
-
-// });
 
 
 
@@ -135,7 +110,6 @@ for (var i = 0; i < 4; i++) {
 // declare a new object for the 4 crystals to mathfloor/math random number 1-12
 // save that number for each round
 
-// Use a Switch case to concatenate the values when clicking on different crystals - unneccesaary
 
 // use another switch case (or if statement?) to make sure you're restarting the game  at 0 if you go over the target number and increasing your losses
 
