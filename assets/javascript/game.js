@@ -6,7 +6,7 @@ var wins = 0;
 var losses = 0;
 var score = 0;
 
-var audio = new Audio('audio_file.mp3');
+var audio = new Audio('assets/javascript/galactic2008.09.26+sbd+foxtheatreN2T18.mp3');
 audio.play();
 // to randomly select a target number each round
 
@@ -51,6 +51,7 @@ function setGame(){	for (var i = 0; i < 4; i++) {
 
 	 	$("#crystal3").on("click", function (){
 	 			score += crystalValue[2];
+
 	 			// alert("Magic " + score + " times!");
 	 			// console.log(score)
 	 			$("#totalScore").text(score);
