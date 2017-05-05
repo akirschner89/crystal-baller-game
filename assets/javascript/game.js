@@ -26,17 +26,7 @@ for (var i = 0; i < 4; i++) {
 };
 
 
-if (score === targetNumber && score > 0) {
-	alert("You Win");
-	wins++;
-	$("winsCounter").html(wins);
-}
 
-else if (score > targetNumber && score > 0) {
-	alert("You Lose!");
-	losses++;
-	$("lossesCounter").html(losses);
-};
 
 
 
@@ -93,17 +83,17 @@ else if (score > targetNumber && score > 0) {
 
 
 
-// if (score > targetNumber && targetNumber !== 0) {
-// 	alert("You Lose!");
-// 	losses++;
-// 	$("lossesCounter").text(losses);
-// };
+if (score > targetNumber && targetNumber !== 0) {
+	alert("You Lose!");
+	losses++;
+	$("lossesCounter").html(losses);
+};
 
-// if (score === targetNumber && targetNumber !== 0) {
-// 	alert("You Win");
-// 	wins++;
-// 	$("winsCounter").text(wins);
-// };
+if (score === targetNumber && targetNumber !== 0) {
+	alert("You Win");
+	wins++;
+	$("winsCounter").html(wins);
+};
 
 
 // if this happens outside of document.ready, you win at first b/c score & target are both 0 - scraped document.ready
